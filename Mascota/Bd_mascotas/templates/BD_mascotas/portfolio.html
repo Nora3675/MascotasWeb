@@ -1,0 +1,64 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ProOnliPc Bootstrap Template</title>
+
+</head>
+
+<body>
+  {%block body%}
+  {% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="portfolios">
+          <div class="text-center">
+            <h2>Productos ofrecidos</h2>
+            <p>Los productos que ofrece Animalito's se basan en el cuidado, aseo y belleza de tus mascotas,
+              ademas ofrecemos productos alimenticios para una buena nutrición de tu mascota y juguetes para
+              una sana recreación.<br>
+            </p>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% for p in producto %}
+  <BR>
+  <div class="container col-md-3" style="text-align: center;display: flex;">
+    <img class=" img-fluid" src="{{p.foto.url}}" alt="" width="30%" height="30%"> <br>
+    Producto: {{p.nom_pro}} <br>
+    Precio: {{p.precio}} <br>
+    Descripción: {{p.desc_pro}} <br>
+    Stock:{{p.stock}}
+    <br>
+  </div>
+
+  {% endfor %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="blogs">
+          <div class="text-center">
+
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%endblock%}
+  {%endblock%}
+</body>
+
+</html>

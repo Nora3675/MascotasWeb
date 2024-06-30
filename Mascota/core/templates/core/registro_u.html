@@ -1,0 +1,109 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    {%block body%}
+    <br>
+    <br>
+    <br>
+
+    <div class="row contact-wrap">
+        <div class="col-md-8 col-md-offset-2">
+
+            <div class="center">
+                <h2>Registro de usuarios nuevos</h2>
+            </div>
+            <br>
+            <form action="" method="post" role="form" class="contactForm">
+                {% csrf_token%}
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Identificación</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="id" />
+                    </div>
+                    <div class="form-group">
+                        <label>Usuario</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Usuario" />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" id="pass" placeholder="Password" />
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirmación de Password</label>
+                        <input type="password" class="form-control" name="password" id="pass2"
+                            placeholder="Confirmación" />
+                        <div class="validation" id="validar_mensaje">
+                            <p>¡Las contraseñas no coinciden!</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tipo de usuario</label>
+                        <input type="email" class="form-control" name="email" id="email" disabled="true"
+                            placeholder="Cliente" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Nombres</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="nombres" />
+                    </div>
+                    <div class="form-group">
+                        <label>Apellidos</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Apellidos" />
+                    </div>
+                    <div class="form-group">
+                        <label>Direción</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Dirección" />
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Teléfono" />
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</E-mail></label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" />
+                    </div>
+                </div>
+                <div>
+                    <a type="button" class="btn btn-primary btn-lg" href="/ingresar/">Iniciar</a>
+                    <a type="button" class="btn btn-primary btn-lg" href="/registro_u/">Registrarse</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/.row-->
+    <BR>
+    <br>
+    <script>
+
+        document.getElementById('pass2').addEventListener('input', function () {
+            const password = document.getElementById('pass').value;
+            const repassword = document.getElementById('pass2').value;
+            const validationMessage = document.getElementById('validar_mensaje');
+
+            if (password !== repassword) {
+                validationMessage.style.display = 'block';
+            } else {
+                validationMessage.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+{%endblock%}
+
+</html>
+{%endblock%}

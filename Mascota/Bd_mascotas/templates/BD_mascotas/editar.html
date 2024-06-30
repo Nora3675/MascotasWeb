@@ -1,0 +1,65 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ProOnliPc Bootstrap Template</title>
+
+</head>
+
+<body>
+
+    {%block body%}
+    {% block content%}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="blogs">
+                    <div class="text-center">
+                        <h2>Editar Blog</h2>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-6 col-12">
+        <form action="" class="custom-form contact-form row" method="post">
+            {% csrf_token %}
+
+            {{form}}
+
+            <div class="col-lg-5 col-12 ms-auto">
+                <button type="submit" id="btnEnviar" class="button">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="blogs">
+                    <div class="text-center">
+
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+</body>
+<!--<script type='text/javascript' src='{% static "js/gestioncat.js" %}?'></script>-->
+
+</html>
+{% endblock %}
